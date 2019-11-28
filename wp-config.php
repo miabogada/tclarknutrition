@@ -7,17 +7,36 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
 	include( dirname( __FILE__ ) . '/local-config.php' );
 } else {
 	define( 'WP_LOCAL_DEV', false );
-	define( 'DB_NAME', '%%DB_NAME%%' );
-	define( 'DB_USER', '%%DB_USER%%' );
-	define( 'DB_PASSWORD', '%%DB_PASSWORD%%' );
-	define( 'DB_HOST', '%%DB_HOST%%' ); // Probably 'localhost'
+//	define( 'DB_NAME', 'root' );
+//	define( 'DB_USER', '' );
+//	define( 'DB_PASSWORD', '' );
+//	define( 'DB_HOST', '' ); // Probably 'localhost'
+	include __DIR__ . '/../wp-config.php';
+
 }
+
+// define('WP_HOME','http://www.tclarknutrition.com');
+// define('WP_SITEURL','http://www.tclarknutrition.com/wp');
+////define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/');
+////define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp');
+if ($_SERVER['HTTP_HOST'] == 'www.tclarknutrition.com') {
+    define('WP_SITEURL', 'https://www.tclarknutrition.com/wp');
+    define('WP_HOME',    'https://www.tclarknutrition.com');
+    define( 'WP_CONTENT_URL', 'https://' . $_SERVER['HTTP_HOST'] . '/content' );
+    $_SERVER['HTTPS'] = 'on';
+} else {
+    define('WP_SITEURL', 'http://www0.tclarknutrition.com/wp');
+    define('WP_HOME',    'http://www0.tclarknutrition.com');
+    define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
+}
+
+//define('ICL_DONT_LOAD_LANGUAGE_SELECTOR_CSS', true);
 
 // ========================
 // Custom Content Directory
 // ========================
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/content' );
-define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
+//define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
 
 // ================================================
 // You almost certainly do not want to change these

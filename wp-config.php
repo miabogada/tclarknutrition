@@ -20,10 +20,10 @@ if ( file_exists( dirname( __FILE__ ) . '/local-config.php' ) ) {
 ////define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '/');
 ////define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp');
 if ($_SERVER['HTTP_HOST'] == 'www.tclarknutrition.com') {
-    define('WP_SITEURL', 'https://www.tclarknutrition.com/wp');
-    define('WP_HOME',    'https://www.tclarknutrition.com');
-    define( 'WP_CONTENT_URL', 'https://' . $_SERVER['HTTP_HOST'] . '/content' );
-    $_SERVER['HTTPS'] = 'on';
+    define('WP_SITEURL', 'http://www.tclarknutrition.com/wp');
+    define('WP_HOME',    'http://www.tclarknutrition.com');
+    define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/content' );
+//    $_SERVER['HTTPS'] = 'on';
 } else {
     define('WP_SITEURL', 'http://www0.tclarknutrition.com/wp');
     define('WP_HOME',    'http://www0.tclarknutrition.com');

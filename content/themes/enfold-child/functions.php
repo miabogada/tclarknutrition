@@ -14,8 +14,6 @@ function preconnect_wp_head(){
         <link rel="preconnect" href="https://www.googletagmanager.com/">
 	<link rel="dns-prefetch" href="https://fonts.gstatic.com/">
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-
-
     <?php //Open PHP tags
 }
 

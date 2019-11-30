@@ -17,3 +17,13 @@ function preconnect_wp_head(){
     <?php //Open PHP tags
 }
 
+if ( !defined('ABSPATH') ){ die(); }
+global $avia_config;
+/* remove "Debugging Info For Theme Support:" message
+*
+*/
+if (!function_exists('avia_debugging_info')){
+  function avia_debugging_info() {
+    // 
+  }
+}
